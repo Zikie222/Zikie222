@@ -9,7 +9,8 @@ SUPPORTED_ENCODINGS = ("utf-8-sig", "gb18030")
 
 def normalize_text(text):
     normalized = unicodedata.normalize("NFKC", text).casefold()
-    return "".join(char for char in normalized if char.isalnum())
+    return "".join([char for char in normalized if char.isalnum()])
+
 
 def ngram_counter(text, n):
     if n <= 0:
